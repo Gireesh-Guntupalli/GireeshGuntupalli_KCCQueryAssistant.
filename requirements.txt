@@ -1,0 +1,9 @@
+pandas
+requests
+sentence-transformers
+json
+numpy
+ollama
+tqdm
+hf_xet
+chromadb
