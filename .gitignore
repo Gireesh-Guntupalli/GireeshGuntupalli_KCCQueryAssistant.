@@ -172,3 +172,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore dataset files
+kcc_cleaned_raw.csv
+kcc_qa_clean.csv
+kcc_qa_clean.json
+
+# Ignore Chroma vector store folder
+chroma_store/
+
