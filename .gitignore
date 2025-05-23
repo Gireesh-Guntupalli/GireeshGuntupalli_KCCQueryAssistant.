@@ -181,3 +181,8 @@ kcc_qa_clean.json
 # Ignore Chroma vector store folder
 chroma_store/
 
+
+*.csv
+*.json
+chroma_store/
+
