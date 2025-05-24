@@ -38,7 +38,9 @@ Question:
 Answer:"""
         source = "local"
     else:
-        serpapi_api_key = "YOUR_SERPAPI_KEY"
+        serpapi_api_key = (
+            "6fb5953aa0005416f5307922637a89b395a05e7208c7b66ce2171b30d3df4e80"
+        )
         params = {"engine": "google", "q": query, "api_key": serpapi_api_key}
         serp_response = requests.get("https://serpapi.com/search", params=params)
 
