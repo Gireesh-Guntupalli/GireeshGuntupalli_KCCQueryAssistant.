@@ -5,16 +5,16 @@ from modules.vector_store import store_embeddings_in_chroma
 from modules.data_preprocessing import preprocess_dataframe
 from modules.data_transformation import create_qa_docs
 from modules.embedding_generation import generate_embeddings
-from modules.rag_pipeline import answer_with_local_llm_rag
+from modules.rag_pipeline import (
+    answer_with_local_llm_rag,
+)  # renamed streaming version
 
 st.set_page_config(page_title="KCC Query Assistant", layout="wide")
 
 st.title("🌾 KCC Query Assistant")
 
-
+# Header image
 image_url = "https://analyticsindiamag.com/wp-content/uploads/2023/04/kissan-got.jpg"
-
-# To center and resize the image, use st.markdown with HTML inside
 st.markdown(
     f"""
     <div style='text-align: center;'>
@@ -26,7 +26,7 @@ st.markdown(
 )
 
 
-# Load model and vector DB once
+# System Setup
 @st.cache_resource
 def setup_system():
     raw_df = pd.read_csv("data/kcc_cleaned_raw.csv")
@@ -40,16 +40,24 @@ def setup_system():
 
 model, collection = setup_system()
 
-# Query form
+# Input field
 query = st.text_input("💬 Ask your agricultural question:")
+
 if st.button("Get Answer") and query:
     with st.spinner("Thinking..."):
-        answer, source = answer_with_local_llm_rag(query, model, collection)
+        response_placeholder = st.empty()
+        streamed_answer = ""
+
+        # Use the streaming generator
+        for chunk, source in answer_with_local_llm_rag(query, model, collection):
+            if source == "error":
+                st.error(chunk)
+                break
+            streamed_answer += chunk
+            response_placeholder.markdown("### Answer:\n" + streamed_answer)
+
+        # Source tag
         if source == "local":
             st.success("✅ Answer from Historical KCC data")
         elif source == "serpapi":
             st.info("🌐 Answer from Internet search")
-        elif source == "error":
-            st.error("❌ Something went wrong")
-        st.markdown("### Answer:")
-        st.write(answer)
