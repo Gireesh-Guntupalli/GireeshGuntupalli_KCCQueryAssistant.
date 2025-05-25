@@ -1,4 +1,3 @@
-# Module: Retrieval Augmented Generation pipeline & LLM integration
 from scipy.spatial.distance import cosine
 
 from modules.llm_interface import query_local_llm

@@ -1,4 +1,3 @@
-# Module: Local LLM API interface
 import requests
 import json
 

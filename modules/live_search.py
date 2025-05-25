@@ -1,4 +1,3 @@
-# Module: Live Internet Search fallback
 import requests
 
 
