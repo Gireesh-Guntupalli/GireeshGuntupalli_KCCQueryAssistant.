@@ -17,14 +17,14 @@
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/kcc-query-assistant.git
+   git clone https://github.com/Gireesh-Guntupalli/GireeshGuntupalli_KCCQueryAssistant..git
    cd kcc-query-assistant
    ```
 
 2. **Create Virtual Environment**
    ```bash
-   python -m venv venv
-   source venv/bin/activate     # On Windows: venv\Scripts\activate
+    conda create --name kcc python=3.10
+    conda activate kcc
    ```
 
 3. **Install Dependencies**
@@ -41,11 +41,11 @@ Here are the key libraries used:
 - `streamlit` - UI for the app
 - `sentence-transformers` - For generating text embeddings
 - `chromadb` - Vector store for document retrieval
-- `scipy`, `pandas`, `requests` - Utility & data processing
+- `pandas`, `requests` - Utility & data processing
 - `ollama` - Interface with local LLM (`gemma3:1b`)
 - `serpapi` - Fallback for web search
 
-Your `requirements.txt` includes all needed packages.
+The `requirements.txt` includes all needed packages.
 
 ---
 
@@ -100,13 +100,23 @@ kcc-query-assistant/
 
 ---
 
-## 🧪 Example Prompt
+## 🧪 Example Prompts
 
+> 💬 “What pest-control methods are recommended for paddy in Tamil Nadu?”
+> 💬 “How to manage drought stress in groundnut cultivation?”
+> 💬 “What issues do sugarcane farmers in Maharashtra commonly face?”
+> 💬 “My tomato plants are wilting even after watering regularly. What could be the problem?”
+> 💬 “What are the recommended pest control methods for cotton in Maharashtra?”
+> 💬 “How can I increase the yield of sugarcane using organic practices?”
+> 💬 “Which is the best fertilizer for paddy during the flowering stage?”
 > 💬 “What are common pests in sugarcane crops in Uttar Pradesh during monsoon?”
+> 💬 “How does agriculatrual practices in Germany differ from that India?” # triggers web search
+> 💬 “What are the government subsidies for installing solar-powered irrigation pumps in 2025?”
+> 💬 “Which startup provides AI-based crop disease detection using drones?” # triggers web search
 
 ---
 
-## 👨‍🌾 Prompt Customization (Used Internally)
+## 👨‍🌾 Prompt Customization (Used Internally), (Refer Modelfile)
 
 ```text
 You are the Kisan Call Center (KCC) Query Assistant, an expert AI specialized in agricultural advice for Indian farmers. 
@@ -128,10 +138,10 @@ Be polite, concise, and informative.
 
 ## 🧠 Parameters
 
-You can tune the LLM response style using:
+These parameters are tuned to prioritize **accuracy and consistency** over creativity:
 
-- `temperature = 1` – Higher creativity
-- `top_p = 0.8` – Nucleus sampling (diverse choices)
+- `temperature = 0.3` – Lower creativity, more focused and factual responses
+- `top_p = 0.7` – Restricts sampling to the most probable tokens, reducing randomness
 
 ---
 
@@ -140,7 +150,7 @@ You can tune the LLM response style using:
 To use **SerpAPI**, export your API key:
 
 ```bash
-export SERPAPI_API_KEY="your_key_here"
+export SERPAPI_API_KEY= "6fb5953aa0005416f5307922637a89b395a05e7208c7b66ce2171b30d3df4e80"
 ```
 
 ---
@@ -153,5 +163,4 @@ Pull requests, issues, and feedback are welcome!
 
 ## 📜 License
 
-MIT License – Free to use and modify.
-
+MIT License 
