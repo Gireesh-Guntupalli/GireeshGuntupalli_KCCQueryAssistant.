@@ -48,7 +48,6 @@ if st.button("Get Answer") and query:
         response_placeholder = st.empty()
         streamed_answer = ""
 
-        # Use the streaming generator
         for chunk, source in answer_with_local_llm_rag(query, model, collection):
             if source == "error":
                 st.error(chunk)

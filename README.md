@@ -49,9 +49,6 @@ The `requirements.txt` includes all needed packages.
 
 ---
 
-
----
-
 # About KCC (kisaan call center) Query Dataset
 
 ## Dataset Source
