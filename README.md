@@ -13,6 +13,10 @@
 
 ---
 
+📁 Raw dataset, preprocessed data, and ChromaDB vector store are available [on Google Drive](https://drive.google.com/drive/folders/1hUTbRY3wiLG_AL50psycFFbGmP9FX4B3).
+
+---
+
 ## 🛠️ Installation
 
 1. **Clone the Repository**
