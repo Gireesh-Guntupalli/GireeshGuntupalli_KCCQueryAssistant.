@@ -7,7 +7,7 @@ from modules.data_transformation import create_qa_docs
 from modules.embedding_generation import generate_embeddings
 from modules.rag_pipeline import (
     answer_with_local_llm_rag,
-)  # renamed streaming version
+)
 
 st.set_page_config(page_title="KCC Query Assistant", layout="wide")
 
