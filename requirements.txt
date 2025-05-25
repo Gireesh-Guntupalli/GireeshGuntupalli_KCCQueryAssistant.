@@ -1,10 +1,18 @@
+# Core Dependencies
 pandas
-requests
-sentence-transformers
-json
 numpy
-ollama
-tqdm
-hf_xet
+sentence-transformers
+scikit-learn
+scipy
+
+# Vector Store
 chromadb
+
+# Web Interface
 streamlit
+
+# For JSON API communication
+requests
+
+# For progress tracking
+tqdm 
