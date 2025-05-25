@@ -205,3 +205,15 @@ Pull requests, issues, and feedback are welcome!
 ## 📜 License
 
 MIT License 
+
+---
+
+## References
+- KCC Dataset: https://kcc-chakshu.icar-web.com/6_data_extract.php
+- Ollama: https://ollama.com/search
+- SerpAPI: https://serpapi.com/dashboard
+- GitHub Repo: https://github.com/Gireesh-Guntupalli/GireeshGuntupalli_KCCQueryAssistant
+- Sentence Transformers: https://www.sbert.net/
+- ChromaDB: https://docs.trychroma.com/
+- Streamlit: https://streamlit.io/
+
