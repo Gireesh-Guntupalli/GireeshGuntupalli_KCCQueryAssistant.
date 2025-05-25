@@ -49,6 +49,49 @@ The `requirements.txt` includes all needed packages.
 
 ---
 
+
+---
+
+# About KCC (kisaan call center) Query Dataset
+
+## Dataset Source
+Downloaded from [KCC Chakshu Portal](https://kcc-chakshu.icar-web.com/) via Data Extraction module (Year=2024).
+
+## Key Features
+- **Size**: 3,234,061 records × 15 attributes
+- **Format**: CSV
+
+## Attributes Description
+| Column        | Description |
+|---------------|-------------|
+| `StateName`   | Name of the state |
+| `DistrictName`| Name of the district |
+| `BlockName`   | Name of the block |
+| `Crop`        | Crop associated with the query |
+| `QueryType`   | Type of question (e.g., pest management, irrigation) |
+| `QueryText`   | Text of the farmer's query |
+| `KccAns`      | Response delivered to farmer |
+| `Category`    | Broad query category |
+| `Year`/`Month`/`Day` | Query timestamp |
+| `Season`      | Relevant agricultural season |
+| `Sector`      | Related sector (e.g., horticulture, animal husbandry) |
+| `latitude`/`longitude` | Geographical coordinates |
+
+## Sample Coverage
+**Top States**:
+- Uttar Pradesh, Rajasthan, Madhya Pradesh, Haryana, Maharashtra, Bihar, Gujarat, West Bengal, Tamil Nadu, Punjab
+
+**Major Crops**:
+- Paddy Dhan, Wheat, Cotton Kapas, Groundnut, Soybean, Maize, Green Gram, Mustard, Potato, Others
+
+## Potential Uses
+- Agricultural trend analysis
+- Seasonal variation studies
+- Regional crop issue identification
+- Historical decision support
+
+---
+
 ## 🚀 Quickstart: Launch the App
 
 1. **Ensure Ollama is running**
@@ -102,17 +145,18 @@ kcc-query-assistant/
 
 ## 🧪 Example Prompts
 
-> 💬 “What pest-control methods are recommended for paddy in Tamil Nadu?”
-> 💬 “How to manage drought stress in groundnut cultivation?”
-> 💬 “What issues do sugarcane farmers in Maharashtra commonly face?”
-> 💬 “My tomato plants are wilting even after watering regularly. What could be the problem?”
-> 💬 “What are the recommended pest control methods for cotton in Maharashtra?”
-> 💬 “How can I increase the yield of sugarcane using organic practices?”
-> 💬 “Which is the best fertilizer for paddy during the flowering stage?”
-> 💬 “What are common pests in sugarcane crops in Uttar Pradesh during monsoon?”
-> 💬 “How does agriculatrual practices in Germany differ from that India?” # triggers web search
-> 💬 “What are the government subsidies for installing solar-powered irrigation pumps in 2025?”
-> 💬 “Which startup provides AI-based crop disease detection using drones?” # triggers web search
+> 💬 “What pest-control methods are recommended for paddy in Tamil Nadu?”  
+> 💬 “How to manage drought stress in groundnut cultivation?”  
+> 💬 “What issues do sugarcane farmers in Maharashtra commonly face?”  
+> 💬 “My tomato plants are wilting even after watering regularly. What could be the problem?”  
+> 💬 “What are the recommended pest control methods for cotton in Maharashtra?”  
+> 💬 “How can I increase the yield of sugarcane using organic practices?”  
+> 💬 “Which is the best fertilizer for paddy during the flowering stage?”  
+> 💬 “What are common pests in sugarcane crops in Uttar Pradesh during monsoon?”  
+> 💬 “How does agriculatrual practices in Germany differ from that India?” # triggers web search   
+> 💬 “What are the government subsidies for installing solar-powered irrigation pumps in 2025?”  
+> 💬 “Which startup provides AI-based crop disease detection using drones?” # triggers web search  
+> 💬 “Can we adopt Israeli agricultural practices for farming in India?” # triggers web search  
 
 ---
 
